@@ -16,22 +16,22 @@ let checks
 function check() {
     enterNum = numBox.value
     if (!isStarted) {
-        result.innerHTML = "Start the game first"
+        showMessage("Start the game first")
     } else if (checks === 0) {
         showLosePrompt()
     } else if (enterNum !== "") {
         if (enterNum == orgNum) {
-            result.innerHTML = "Congo ! You won :)"
+            showMessage("Congo! You won :)")
             checkBtn.disabled = true
         } else if (enterNum < orgNum) {
-            result.innerHTML = "Try a larger number"
+            showMessage("Try a larger number")
             updatechecks()
         } else {
-            result.innerHTML = "Oh! Try a smaller number"
+            showMessage("Oh! Try a smaller number")
             updatechecks()
         }
     } else {
-        result.innerHTML = "Where's the number?"
+        showMessage("Where's the number?")
     }
 }
 
@@ -40,8 +40,8 @@ function newGame() {
     checkBtn.disabled = false
     orgNum = Math.floor(Math.random() * 20 + 1)
     numBox.value = ""
-    checks = changeChecks.value
-    result.innerHTML = "Started....."
+    checks = parseInt(changeChecks.value)
+    showMessage("Started.....")
     remChecks.innerText = "Remaining Checks : " + checks
 }
 
@@ -58,18 +58,26 @@ function settingsOpen() {
 }
 
 function doneBtn() {
-    checks = changeChecks.value
+    checks = parseInt(changeChecks.value)
     newGame()
 }
 
 function showLosePrompt() {
-    result.innerHTML = "You lose! Start a new game."
     checkBtn.disabled = true
     numBox.disabled = true
+    showMessage("You lose! Start a new game.")
 
     setTimeout(() => {
-        alert("Game Over! You've run out of checks. Better luck next time!")
-        numBox.disabled = false
-        remChecks.innerText = "Remaining Checks : 0"
+        if (confirm("Game Over! You've run out of checks. Do you want to start a new game?")) {
+            newGame()
+        } else {
+            numBox.disabled = false
+            checkBtn.disabled = true
+            showMessage("Game Over! Please start a new game.")
+        }
     }, 300)
+}
+
+function showMessage(msg) {
+    result.innerHTML = msg
 }
