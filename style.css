@@ -1,18 +1,21 @@
-html,body{
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: large;
-    background: rgb(130, 233, 206);
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
 }
 
-#root{    
+#root {    
     height: 100vh;   
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#numBox{
+#numBox {
     margin-top: 10%;
     margin-bottom: 2%;
     width: 30vw;
@@ -22,70 +25,82 @@ html,body{
     font-size: 1rem;
     min-width: 30vw;
     text-align: center;
-    border: 3px solid rgb(68, 242, 242);
-    border-radius: 30px 30px;
-    transition: border-color 5ms;
+    border: 2px solid #4CAF50;
+    border-radius: 30px;
+    transition: border-color 0.3s ease-in-out;
 }
 
-#numBox:focus,#numBox:hover{
-    border-color: yellow;
+#numBox:focus, #numBox:hover {
+    border-color: #FFEB3B;
 }
 
 #checkBtn,
-#newGameBtn{
+#newGameBtn {
     width: 10rem;
-    height: 2rem;
+    height: 2.5rem;
     font-size: 1rem;
     margin-top: 2%;
     margin-bottom: 1%;
     text-align: center;
-    border-width: 3px;
-    border-radius: 20px 20px;
-    transition: border-color 5ms;
-
-}
-
-#checkBtn:hover,
-#newGameBtn:hover{
-    border-color: yellow;
-}
-
-#result,p{
-    color:white;
-
-}
-
-#remChecks{
-    margin: 1%;
-}
-
-#game-box{
-    width: 55%;
-    position: absolute;
-    left: 20%;
-    top: 20%;
-    padding-bottom: 3%;
-    padding-right: 3%;
-    padding-left: 3% ;
-    background-color: rgb(49, 93, 132);
-}
-
-#settings{
-    display: none;
-    padding: 5%;
-    font-size: medium;
-    background-color: rgb(206, 52, 52);
-}
-
-#settings input{
-    width: 2rem;
-    text-align: center;
-}
-
-#image{
-    position: absolute;
-    right: 1%;
-    top:1% ;
+    border: 2px solid #4CAF50;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
     cursor: pointer;
 }
 
+#checkBtn:hover,
+#newGameBtn:hover {
+    background-color: #FFEB3B;
+    border-color: #FFEB3B;
+    color: black;
+}
+
+#result, p {
+    color: #FFF;
+    font-size: 1.2rem;
+}
+
+#remChecks {
+    margin: 1%;
+    font-size: 1rem;
+    color: #FFF;
+}
+
+#game-box {
+    width: 55%;
+    position: absolute;
+    left: 22.5%;
+    top: 20%;
+    padding: 3%;
+    background-color: rgba(33, 150, 243, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#settings {
+    display: none;
+    padding: 5%;
+    font-size: medium;
+    background-color: #f44336;
+    border-radius: 10px;
+    color: white;
+}
+
+#settings input {
+    width: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem;
+}
+
+#image {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+}
