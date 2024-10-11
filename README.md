@@ -1,4 +1,4 @@
-<h2> align = "center>Number guess by checks</h2>
+<h2 align = "center">Number guess by checks</h2>
 <hr>
 
 <p>In this game we first set up the checks to find the number and each time you predict the wrong number checks decrease until you win the game or checks may be over before finding.</p>
